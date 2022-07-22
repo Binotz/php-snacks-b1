@@ -45,7 +45,7 @@ Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro arra
     <h2>PM: </h2>
     <?php for($i = 0; $i < count($db['pm']); $i++){ ?>
         <?php $currentPM = $db['pm'][$i]; ?>
-        <div class="gray"> <?php echo $currentPM['name'] ?> <?php echo $currentPM['lastname'] ?></div>
+        <div class="green"> <?php echo $currentPM['name'] ?> <?php echo $currentPM['lastname'] ?></div>
     <?php } ?>
 </body>
 </html>
