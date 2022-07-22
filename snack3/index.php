@@ -13,12 +13,16 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
    
     <?php 
         $randomNumbersArray = [];
+        //ciclo finché ho 15 numeri diversi nell'array
         while(count($randomNumbersArray) < 15){
+            //genero un numero random
             $randomNumber = rand(1,100);
+            //se non è già nell'array, lo pusho
             if(!(in_array($randomNumber, $randomNumbersArray) ) ){
                 $randomNumbersArray[] = $randomNumber;
             }
         } 
+        //stampo a pagina l'array
         for($i = 0; $i < count($randomNumbersArray); $i++){
             echo $randomNumbersArray[$i] . '<br>';
         }
