@@ -7,6 +7,7 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -49,11 +50,22 @@ Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno 
             ],
         ];
 
+        function votesAverage($votes){
+            $votesTot = 0;
+            for($i = 0; $i < count($votes); $i++){
+                $votesTot += $votes[$i];
+            }
+            return $votesTot / count($votes);
+        }
     ?>
 
     <?php for($i = 0; $i < count($students); $i++){?>
-        <?php $currentStudent = $students[$i]; ?>
-        <h3>Nome: <?php echo $currentStudent['name']?></h3>
+        <div class="student">
+            <?php $currentStudent = $students[$i]; ?>
+            <h3>Nome: </h3> <span><?php echo $currentStudent['name']?> </span>
+            <h3>Cognome: </h3> <span><?php echo $currentStudent['lastname']?> </span> 
+            <h3>Media Voti: </h3> <span><?php echo votesAverage($currentStudent['voti']);?> </span> 
+        </div>
     <?php }?>
 </body>
 </html>
